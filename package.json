@@ -1,0 +1,25 @@
+{
+  "name": "loom",
+  "displayName": ".loom",
+  "description": "VSCode Loom Language Support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "loom",
+      "aliases": ["loom", "loom"],
+      "extensions": [".loom"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "loom",
+      "scopeName": "",
+      "path": "./syntaxes/loom.tmLanguage.json"
+    }]
+  }
+}

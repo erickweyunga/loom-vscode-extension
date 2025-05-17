@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "loom",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.loom",
+					"match": "\\b(thread|weave|knot|pattern|return|loop|each|include|from|as|expose|void|true|false|and|or)\\b"
+				},
+				{
+					"name": "keyword.operator.loom",
+					"match": "(\\+|-|\\*|/|%|!|==|!=|>|>=|<|<=|\\|>|>>)\\b"
+				},
+				{
+					"name": "constant.numeric.loom",
+					"match": "\\b\\d+(\\.\\d+)?\\b"
+				},
+				{
+					"name": "string.quoted.double.loom",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "variable.loom",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.loom",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.loom",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.loom",
+	"uuid": "6e9a0be3-1234-5678-9101-112131415161",
+	"version": 1,
+	"fileTypes": ["loom"]
+}

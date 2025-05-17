@@ -1,0 +1,41 @@
+{
+    "comments": {
+        // Single line comment symbol
+        "lineComment": "//",
+        // Block comment symbols (start and end)
+        "blockComment": ["/*", "*/"]
+    },
+    // Symbols used as brackets in the language
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["|>", "|<"],      // Flow brackets
+        ["<<", ">>"]       // Blend brackets
+    ],
+    // Symbols that are automatically closed when typed
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"],
+        ["|>", "|<"],      // Auto-close flow brackets
+        ["<<", ">>"]       // Auto-close blend brackets
+    ],
+    // Symbols that can be used to surround a selection
+    "surroundingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"],
+        ["|>", "|<"],      // Surround selection with flow brackets
+        ["<<", ">>"]       // Surround selection with blend brackets
+    ],
+    // Symbols that cause indentation increase or decrease
+    "indentationRules": {
+        "increaseIndentPattern": "^.*(\\{|\\[|\\(|\\|>|<<)\\s*$",
+        "decreaseIndentPattern": "^\\s*(\\}|\\]|\\)|\\|<|>>)\\s*$"
+    }
+}
