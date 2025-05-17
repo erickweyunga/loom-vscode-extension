@@ -1,3 +1,0 @@
-thread main() {
-    return "";
-}

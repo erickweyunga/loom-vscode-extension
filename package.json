@@ -4,22 +4,43 @@
   "description": "VSCode Loom Language Support",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.100.0"
+    "vscode": ">=1.60.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erickweyunga/loom-vscode-extension.git"
+  },
+  "publisher": "erickweyunga",
+  "license": "MIT",
   "contributes": {
-    "languages": [{
-      "id": "loom",
-      "aliases": ["loom", "loom"],
-      "extensions": [".loom"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "loom",
-      "scopeName": "",
-      "path": "./syntaxes/loom.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "loom",
+        "aliases": [
+          "loom",
+          "loom"
+        ],
+        "extensions": [
+          ".loom"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "loom",
+        "path": "./snippets/loom.snippets.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "loom",
+        "scopeName": "source.loom",
+        "path": "./syntaxes/loom.tmLanguage.json"
+      }
+    ]
   }
 }

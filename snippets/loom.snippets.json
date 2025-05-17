@@ -1,0 +1,137 @@
+{
+    "Thread Declaration": {
+        "prefix": "thread",
+        "body": [
+            "thread ${1:name}(${2:parameters}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Create a new thread function"
+    },
+    "Main Thread": {
+        "prefix": "main",
+        "body": [
+            "thread main() {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Create a main thread function"
+    },
+    "Pattern Declaration": {
+        "prefix": "pattern",
+        "body": [
+            "pattern ${1:name}(${2:parameters}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Create a pattern function"
+    },
+    "Weave Declaration": {
+        "prefix": "weave",
+        "body": [
+            "weave ${1:name} = ${2:value};"
+        ],
+        "description": "Declare a variable with weave"
+    },
+    "Knot Declaration": {
+        "prefix": "knot",
+        "body": [
+            "knot ${1:name} = ${2:value};"
+        ],
+        "description": "Declare a constant with knot"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "If statement"
+    },
+    "If-Else Statement": {
+        "prefix": "ifelse",
+        "body": [
+            "if (${1:condition}) {",
+            "\t$2",
+            "} else {",
+            "\t$0",
+            "}"
+        ],
+        "description": "If-else statement"
+    },
+    "Loop": {
+        "prefix": "loop",
+        "body": [
+            "loop ${1:times} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Loop statement"
+    },
+    "Each Loop": {
+        "prefix": "each",
+        "body": [
+            "each ${1:item} in ${2:collection} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Each/forEach loop"
+    },
+    "Include Statement": {
+        "prefix": "include",
+        "body": [
+            "include ${1:module}"
+        ],
+        "description": "Include a module"
+    },
+    "Include From Statement": {
+        "prefix": "includefrom",
+        "body": [
+            "include ${1:symbols} from ${2:module}"
+        ],
+        "description": "Include specific symbols from a module"
+    },
+    "Include As Statement": {
+        "prefix": "includeas",
+        "body": [
+            "include ${1:module} as ${2:alias}"
+        ],
+        "description": "Include a module with an alias"
+    },
+    "Expose Statement": {
+        "prefix": "expose",
+        "body": [
+            "expose ${1:symbols}"
+        ],
+        "description": "Expose symbols from a module"
+    },
+    "Print": {
+        "prefix": "print",
+        "body": [
+            "print(${1:value});"
+        ],
+        "description": "Print to console"
+    },
+    "List": {
+        "prefix": "list",
+        "body": [
+            "[${1:values}]"
+        ],
+        "description": "Create a list"
+    },
+    "Pipe Operator": {
+        "prefix": "pipe",
+        "body": [
+            "${1:value} |> ${2:function}()"
+        ],
+        "description": "Use pipe operator"
+    },
+    "Compose Operator": {
+        "prefix": "compose",
+        "body": [
+            "${1:function1} >> ${2:function2}"
+        ],
+        "description": "Use compose operator"
+    }
+}
