@@ -32,6 +32,9 @@
 		},
 		{
 			"include": "#variables"
+		},
+		{
+			"include": "#module-system"
 		}
 	],
 	"repository": {
@@ -66,14 +69,6 @@
 					"match": "\\b(weave|knot)\\b"
 				},
 				{
-					"name": "keyword.control.import.loom",
-					"match": "\\b(include|from|as)\\b"
-				},
-				{
-					"name": "keyword.control.export.loom",
-					"match": "\\b(expose)\\b"
-				},
-				{
 					"name": "storage.type.function.loom",
 					"match": "\\b(thread|pattern)\\b"
 				}
@@ -83,7 +78,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.conditional.loom",
-					"match": "\\b(if|else)\\b"
+					"match": "\\b(knot|pattern)\\b"
 				},
 				{
 					"name": "keyword.control.loop.loom",
@@ -91,7 +86,7 @@
 				},
 				{
 					"name": "keyword.control.flow.loom",
-					"match": "\\b(return|break|continue)\\b"
+					"match": "\\b(return)\\b"
 				}
 			]
 		},
@@ -115,7 +110,11 @@
 				},
 				{
 					"name": "constant.language.null.loom",
-					"match": "\\b(null|void)\\b"
+					"match": "\\b(void)\\b"
+				},
+				{
+					"name": "constant.language.loom",
+					"match": "\\b(PI|E|EMPTY_LIST|EMPTY_STRING|TRUE|FALSE)\\b"
 				}
 			]
 		},
@@ -139,7 +138,11 @@
 				},
 				{
 					"name": "keyword.operator.pipe.loom",
-					"match": "(\\|>|>>)"
+					"match": "(\\|>)"
+				},
+				{
+					"name": "keyword.operator.compose.loom",
+					"match": "(>>)"
 				}
 			]
 		},
@@ -160,38 +163,30 @@
 				{
 					"name": "punctuation.section.brackets.end.loom",
 					"match": "\\}"
-				},
-				{
-					"name": "punctuation.section.parens.begin.loom",
-					"match": "\\("
-				},
-				{
-					"name": "punctuation.section.parens.end.loom",
-					"match": "\\)"
-				},
-				{
-					"name": "punctuation.section.brackets.square.begin.loom",
-					"match": "\\["
-				},
-				{
-					"name": "punctuation.section.brackets.square.end.loom",
-					"match": "\\]"
-				},
-				{
-					"name": "punctuation.separator.comma.loom",
-					"match": ","
 				}
 			]
 		},
 		"variables": {
 			"patterns": [
 				{
-					"name": "variable.parameter.loom",
-					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*,|\\s*\\))"
+					"name": "variable.declaration.loom",
+					"match": "\\b(weave)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\b"
 				},
 				{
 					"name": "variable.other.loom",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+				}
+			]
+		},
+		"module-system": {
+			"patterns": [
+				{
+					"name": "keyword.control.import.loom",
+					"match": "\\b(include|from|as)\\b"
+				},
+				{
+					"name": "keyword.control.export.loom",
+					"match": "\\b(expose)\\b"
 				}
 			]
 		}

@@ -1,32 +1,57 @@
 {
-  "name": "loom",
-  "displayName": ".loom",
-  "description": "VSCode Loom Language Support",
-  "version": "0.0.1",
+  "name": "loom-language",
+  "displayName": "Loom Language",
+  "description": "Loom programming language support for Visual Studio Code with syntax highlighting, snippets, and intelligent editing features",
+  "version": "0.1.0",
   "engines": {
-    "vscode": ">=1.60.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets",
+    "Formatters"
   ],
+  "keywords": [
+    "loom",
+    "language",
+    "syntax",
+    "highlighting",
+    "functional"
+  ],
+  "icon": "images/loom-logo.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/erickweyunga/loom-vscode-extension.git"
   },
   "publisher": "erickweyunga",
+  "author": {
+    "name": "Erick Weyunga"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickweyunga/loom-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/erickweyunga/loom-vscode-extension#readme",
   "contributes": {
     "languages": [
       {
         "id": "loom",
         "aliases": [
-          "loom",
-          "loom"
+          "Loom",
+          "loom-lang"
         ],
         "extensions": [
           ".loom"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/loom-light.svg",
+          "dark": "./icons/loom-dark.svg"
+        }
       }
     ],
     "snippets": [
@@ -41,6 +66,57 @@
         "scopeName": "source.loom",
         "path": "./syntaxes/loom.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Loom",
+      "properties": {
+        "loom.enableDiagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable diagnostics for Loom files"
+        },
+        "loom.formatOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Format Loom files on save"
+        },
+        "loom.tabSize": {
+          "type": "number",
+          "default": 2,
+          "description": "Number of spaces for indentation in Loom files"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "loom.runCurrentFile",
+        "title": "Loom: Run Current File"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorLangId == loom",
+          "command": "loom.runCurrentFile",
+          "group": "loom"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:package": "vsce package",
+    "vscode:publish": "vsce publish",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@types/vscode": "^1.63.0",
+    "typescript": "^4.5.4",
+    "vscode": "^1.1.37",
+    "mocha": "^9.1.2",
+    "@types/mocha": "^9.0.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
